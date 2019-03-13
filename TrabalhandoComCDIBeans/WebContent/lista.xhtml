@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:f="http://xmlns.jcp.org/jsf/core"
+		xmlns:h="http://xmlns.jcp.org/jsf/html"
+		xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Cadastro de Itens</title>
+</head>
+<body>
+	<h:form id="form">
+		<h:panelGrid columns="4">
+			<h:outputLabel value="Item:"/>
+			<h:inputText value="#{listaBean.item}"/>
+			
+			<h:commandButton value="Adicionar" action="#{listaBean.adicionar}"/>
+			<h:commandButton value="Remover Tudo" action="#{listaBean.removerTudo}"/>
+		</h:panelGrid>
+	</h:form>
+	
+	<ui:repeat var="i" value="#{listaBean.itens}">
+		<li>#{i}</li>
+	</ui:repeat>
+</body>
+</html>
